@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+
+<body>
+    <br><br>
+    <!--USERNAME Y NPREGUNTAS (añadirle la clase formulari al div container)-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-group" id="iniciarUsuari">
+                    <!--Demana el nom d'usuari-->
+                    <h3 id="nombre"></h3>
+                    <input type="text" class="form-control" id="usuari" placeholder="Enter your name here">
+                    <button onclick=changeUser(); id="cambioUsuario" class="btn btn-secondary">Change user</button><br>
+                    <!--Demana el total de preguntes-->
+                    <label class="form-label mt-4">How many questions do you want?</label>
+                    <select class="form-select" id="numPreguntes">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br><button class="btn btn-secondary" id="play" onclick="jugar()">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--PREGUNTAS-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div id="llistaPreguntes"></div>
+            </div>
+            <div class="col-md-3 card border-secondary mb-3" style="margin-top: 20px; max-height: 900px;" id="respuestasGuardadas">
+                <div id="tablero"></div>
+            </div>
+        </div>
+    </div>
+    <script src="quizjs.js"></script>
+    <script>iniciar()</script>
+</body>
+
+</html>
